@@ -1,0 +1,1 @@
+MODEL_NAME='ptvnck/qwen2.5-1.5b-exam-tutor'
