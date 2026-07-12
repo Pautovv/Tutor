@@ -40,7 +40,7 @@ def build_index(dataset_name: str, model_name: str, index_path: str, metadata_pa
     index = FaissStore(d)
     faiss.normalize_L2(embeddings)
     index.add(embeddings)
-    logger.info(f'Index builded successfully | Total vectors: {index.ntotal}')
+    logger.info(f'Index builded successfully')
 
     metadata = list(dataset['document'])
 
