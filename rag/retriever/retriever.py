@@ -1,9 +1,11 @@
 import faiss, json
 from rag.embedding_model.embedding_model import load_model, encode
 
-model = load_model('sentence-transformers/all-MiniLM-L6-v2')
-index = faiss.read_index('rag/data/processed/index.faiss')
-with open('rag/data/processed/metadata.json', 'r') as f:
+from rag.config import MODEL_NAME, INDEX_PATH, METADATA_PATH
+
+model = load_model(MODEL_NAME)
+index = faiss.read_index(INDEX_PATH)
+with open(METADATA_PATH, 'r') as f:
     metadata = json.load(f) 
 
 def retriever(user_query, top_k):
