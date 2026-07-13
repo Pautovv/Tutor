@@ -30,7 +30,6 @@ class Generator:
         try:
             return AutoModelForCausalLM.from_pretrained(
                 model_name,
-                device_map='auto',
                 torch_dtype='auto'
             )
         except RepositoryNotFoundError as e:
